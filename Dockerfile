@@ -5,7 +5,6 @@ WORKDIR /go/src/github.com/jsleeio/hubrando
 COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux go build
-RUN ls -l /go/src/github.com/jsleeio/hubrando
 
 # Now copy it into our base image.
 FROM scratch
