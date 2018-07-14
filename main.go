@@ -39,7 +39,7 @@ func (app *app) ListWatched() []*github.Repository {
   for {
     repos, resp, err := app.Client.Activity.ListWatched(app.Context, "", opts)
     if err != nil {
-      log.Fatalf("unable to fully paginate subscriptions: %v", err)
+      log.Fatalf("unable to fully retrieve subscriptions: %v", err)
     }
     allRepos = append(allRepos, repos...)
     if resp.NextPage == 0 {
